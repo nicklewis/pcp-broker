@@ -70,6 +70,13 @@
                                       {:injections [(do
                                                      (require 'schema.core)
                                                      (schema.core/set-fn-validation! true))]}]
+             :uberjar {:aot [puppetlabs.pcp.broker.service
+                             puppetlabs.trapperkeeper.services.authorization.authorization-service
+                             puppetlabs.trapperkeeper.services.metrics.metrics-service
+                             puppetlabs.trapperkeeper.services.scheduler.scheduler-service
+                             puppetlabs.trapperkeeper.services.status.status-service
+                             puppetlabs.trapperkeeper.services.webrouting.webrouting-service
+                             puppetlabs.trapperkeeper.services.webserver.jetty9-service]}
              :unit [:test-base
                     {:test-paths ^:replace ["test/unit"]}]
              :integration [:test-base
